@@ -129,17 +129,33 @@
         ];
 
 
-        document.getElementById('lightModeToggle').addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
+        function setMode(mode) {
+            if (mode === 'light') {
+                document.body.classList.add('light-mode');
+            } else {
+                document.body.classList.remove('light-mode');
+            }
+            localStorage.setItem('mode', mode);
+            
+            document.getElementById("lightModeToggle").querySelector('i').classList.toggle('fa-sun');
+            document.getElementById("lightModeToggle").querySelector('i').classList.toggle('fa-moon');
 
             const randomIndex = Math.floor(Math.random() * messages.length);
-            const randomMessage = messages[randomIndex];
+            const randomMessage = messages[randomIndex]; 
             const messageBox = document.getElementById("lm");
             messageBox.innerHTML = randomMessage;
+        }
 
-            this.querySelector('i').classList.toggle('fa-sun');
-            this.querySelector('i').classList.toggle('fa-moon');
-        });
+        function toggleMode() {
+            const newMode = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+            setMode(newMode);
+        }
+
+        document.getElementById("lightModeToggle").addEventListener('click', toggleMode);
+
+        // Check localStorage and set initial mode
+        const savedMode = localStorage.getItem('mode') || 'dark';
+        setMode(savedMode);
 
     </script>
 </body>
