@@ -4,7 +4,8 @@
     --bg-color: #110011;
     --content-bg: #1a1a1a;
     --text-color: #e0e0e0;
-    --accent-color: #b388ff;
+    --accent-color: 
+    
     --accent-color2: #d3879a;
     --sidebar-bg: #2c0054;
     --button-bg: #4b0082;
@@ -37,6 +38,7 @@ body {
 /* CHECKERBOARD A: 0 0, 0 0, 0 0, 0 0*/
 /* CHECKERBOARD B: 20px 20px, 20px -20px, -20px -20px, -20px 20px;*/
 /* THORNS: 0 0, 0 10px, 20px -10px, -20px 0px;*/
+/* ISO: -20px 20px, 0px 0px, 20px 0px, -19px 20px*/
 
 .page-container {
     display: flex;

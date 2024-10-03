@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVT - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap">
+    <link rel="icon" type="image/png" href="images/fav.PNG">
+    <link rel="stylesheet" href="sliders.css">
+</head>
+<body>
+    <div id="mobile-message" class="mobile-message">
+        <h1 id="mobile-message">Nice phone! Sadly this website isn't ready for it...</h1>
+        <p id="mobile-message">Try again on a bigger screen!</p>
+    </div>
+    <div id="page-container" class="page-container">
+        <div class="sidebar">
+            
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Adrian Vecina Tercero</a></li>
+                        <hr>
+                        <li><a href="hackathons.html">Hackathons</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="publications.html">Food</a></li>
+                        <li><a href="background.html">Mess with the Background</a></li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+            <div class="portrait-container">
+                <img src="images/silly.jpg" title="As unserious as always!" class="portrait">
+            </div>
+            <hr>
+            <div class="button-container">
+                <button class="icon-button" id="lightModeToggle"><i class="fas fa-sun"></i></button>
+
+                <a href="https://github.com/Majonez57">
+                    <button class="icon-button"><i class="fab fa-github"></i></button>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/adrian-vecina-tercero"> 
+                    <button class="icon-button"><i class="fab fa-linkedin"></i></button>
+                </a>
+
+                <a href="https://robonotts.github.io">
+                    <button class="icon-button"><i class="fab fa-android"></i></button>
+                </a>
+                
+            </div>
+            
+            <div id="lm" class="light-mode-message">...Ouch my eyes</div>
+        </div>
+        <div class="content">
+            <section id="messy">
+                <h1>Playing with Linear Gradients</h1>
+                <p> 
+                    This website is meant to act as a showcase of my projects, and this is one of them!
+                    I created this website mostly in a day, with some intial help from the odd LLM. However,
+                    when I was deciding what to do as a background, I started messing around with Linear Gradients,
+                    and at around 2am, I stumbled upon the idea of layering these partially transparent gradients
+                    together at different rotations, leading to the thorny looking background you see here, which is
+                    just a tiling of 4 tiny gradients that form little triangles, alonside some smart colour choices and
+                    positioning. I actually spent a few hours trying out different patterns, and in the end I decided that I 
+                    would add a toy on the website just to appreciate some of the cool patterns you can make, 
+                    and let you mess around with all the numbers! <b>Enjoy!</b>
+                </p>
+                <div class="standout-box">
+                    Use the following buttons and sliders to have fun with the background!
+                </div>
+
+                <div class="controlpanel">
+
+                    <div class="slidercont">
+                        <label for="bg1-x"> <b>Gradient A </b>| <b>x</b>: <span id="ax"></span></label>
+                        <input type="range" id="bg1-x" min="-20" max="20" value="0" class="slider">
+                        <label for="bg1-y"> <b>y</b>: <span id="ay"></span></label>
+                        <input type="range" id="bg1-y" min="-20" max="20" value="0" class="slider">
+                        <label for="bg1-t"> <b>θ</b>: <span id="at"></span></label>
+                        <input type="range" id="bg1-t" min="-90" max="90" value="45" class="slider">
+                        <hr>
+                    </div>
+
+                    <div class="slidercont">
+                        <label for="bg2-x"> <b>Gradient B </b>| <b>x</b>: <span id="bx"></span></label>
+                        <input type="range" id="bg2-x" min="-20" max="20" value="0" class="slider">
+                        <label for="bg2-y"> <b>y</b>: <span id="by"></span></label>
+                        <input type="range" id="bg2-y" min="-20" max="20" value="10" class="slider">
+                        <label for="bg2-t"> <b>θ</b>: <span id="bt"></span></label>
+                        <input type="range" id="bg2-t" min="-90" max="90" value="-45" class="slider">
+                        <hr>
+                    </div>
+
+                    <div class="slidercont">
+                        <label for="bg3-x"> <b>Gradient C </b>| <b>x</b>: <span id="cx"></span></label>
+                        <input type="range" id="bg3-x" min="-20" max="20" value="20" class="slider">
+                        <label for="bg3-y"> <b>y</b>: <span id="cy"></span></label>
+                        <input type="range" id="bg3-y" min="-20" max="20" value="-10" class="slider">
+                        <label for="bg3-t"> <b>θ</b>: <span id="ct"></span></label>
+                        <input type="range" id="bg3-t" min="-90" max="90" value="45" class="slider">
+                        <hr>
+                    </div>
+
+                    <div class="slidercont">
+                        <label for="bg4-x"> <b>Gradient D </b>| <b>x</b>: <span id="dx"></span></label>
+                        <input type="range" id="bg4-x" min="-20" max="20" value="-20" class="slider">
+                        <label for="bg4-y"> <b>y</b>: <span id="dy"></span></label>
+                        <input type="range" id="bg4-y" min="-20" max="20" value="0" class="slider">
+                        <label for="bg4-t"> <b>θ</b>: <span id="dt"></span></label>
+                        <input type="range" id="bg4-t" min="-90" max="90" value="-45" class="slider">
+                        <hr>
+                    </div>
+                </div>
+            </section>
+            <script>
+                // There's probably a better way to do this lol
+                const bg1XSlider = document.getElementById('bg1-x');
+                const bg1YSlider = document.getElementById('bg1-y');
+                const bg1TSlider = document.getElementById('bg1-t');
+
+                const bg2XSlider = document.getElementById('bg2-x');
+                const bg2YSlider = document.getElementById('bg2-y');
+                const bg2TSlider = document.getElementById('bg2-t');
+
+                const bg3XSlider = document.getElementById('bg3-x');
+                const bg3YSlider = document.getElementById('bg3-y');
+                const bg3TSlider = document.getElementById('bg3-t');
+
+                const bg4XSlider = document.getElementById('bg4-x');
+                const bg4YSlider = document.getElementById('bg4-y');
+                const bg4TSlider = document.getElementById('bg4-t');
+
+                const bg1XOut = document.getElementById('ax');
+                const bg1YOut = document.getElementById('ay');
+                const bg1TOut = document.getElementById('at');
+
+                const bg2XOut = document.getElementById('bx');
+                const bg2YOut = document.getElementById('by');
+                const bg2TOut = document.getElementById('bt');
+
+                const bg3XOut = document.getElementById('cx');
+                const bg3YOut = document.getElementById('cy');
+                const bg3TOut = document.getElementById('ct');
+
+                const bg4XOut = document.getElementById('dx');
+                const bg4YOut = document.getElementById('dy');
+                const bg4TOut = document.getElementById('dt');
+        
+                // Function to update the background position
+                function updateBackgroundPosition() {
+                    const bg1X = bg1XSlider.value;
+                    const bg1Y = bg1YSlider.value;
+                    const bg1T = bg1TSlider.value;
+
+                    const bg2X = bg2XSlider.value;
+                    const bg2Y = bg2YSlider.value;
+                    const bg2T = bg2TSlider.value;
+
+                    const bg3X = bg3XSlider.value;
+                    const bg3Y = bg3YSlider.value;
+                    const bg3T = bg3TSlider.value;
+
+                    const bg4X = bg4XSlider.value;
+                    const bg4Y = bg4YSlider.value;
+                    const bg4T = bg4TSlider.value;
+        
+                    // Update the background-position CSS property for all 4 images
+                    document.body.style.backgroundPosition = 
+                        `${bg1X}px ${bg1Y}px, ${bg2X}px ${bg2Y}px, ${bg3X}px ${bg3Y}px, ${bg4X}px ${bg4Y}px`;
+                    
+                        document.body.style.backgroundImage = 
+                        `linear-gradient(${bg1T}deg, #270027 25%, transparent 25%),
+                         linear-gradient(${bg2T}deg, #270027 25%, transparent 25%),
+                         linear-gradient(${bg3T}deg, transparent 75%, #270027 75%),
+                         linear-gradient(${bg4T}deg, transparent 75%, #270027 75%)`;
+
+                    bg1XOut.innerHTML = bg1X+'px';
+                    bg1YOut.innerHTML = bg1Y+'px';
+                    bg1TOut.innerHTML = bg1T+'°';
+                    bg2XOut.innerHTML = bg2X+'px';
+                    bg2YOut.innerHTML = bg2Y+'px';
+                    bg2TOut.innerHTML = bg2T+'°';
+                    bg3XOut.innerHTML = bg3X+'px';
+                    bg3YOut.innerHTML = bg3Y+'px';
+                    bg3TOut.innerHTML = bg3T+'°';
+                    bg4XOut.innerHTML = bg4X+'px';
+                    bg4YOut.innerHTML = bg4Y+'px';
+                    bg4TOut.innerHTML = bg4T+'°';
+                }
+        
+                // Attach event listeners to the sliders to update the background position dynamically
+                bg1XSlider.addEventListener('input', updateBackgroundPosition);
+                bg1YSlider.addEventListener('input', updateBackgroundPosition);
+                bg1TSlider.addEventListener('input', updateBackgroundPosition);
+                bg2XSlider.addEventListener('input', updateBackgroundPosition);
+                bg2YSlider.addEventListener('input', updateBackgroundPosition);
+                bg2TSlider.addEventListener('input', updateBackgroundPosition);
+
+                bg3XSlider.addEventListener('input', updateBackgroundPosition);
+                bg3YSlider.addEventListener('input', updateBackgroundPosition);
+                bg3TSlider.addEventListener('input', updateBackgroundPosition);
+
+                bg4XSlider.addEventListener('input', updateBackgroundPosition);
+                bg4YSlider.addEventListener('input', updateBackgroundPosition);
+                bg4TSlider.addEventListener('input', updateBackgroundPosition);
+        
+                // Initialize the background position on page load
+                updateBackgroundPosition();
+            </script>
+        </div>
+    </div>
+    <script>
+
+        // No phones please!
+        // Function to detect small screen width (e.g., typical mobile device width)
+        function isSmallScreen() {
+            return window.innerWidth <= 768;  // Typical mobile and tablet width breakpoint
+        }
+
+        // Display message if on a small screen (mobile/tablet) and hide regular content
+        if (isSmallScreen()) {
+            document.getElementById('mobile-message').style.display = 'block';  // Show mobile message
+            document.getElementById("page-container").style.display = 'none';  // Hide main content
+        }
+
+        const messages = [
+            "Why would you do that?",
+            "Well, that's... bright.",
+            "...my eyes!",
+            "for what purpose?",
+            "Oh great, now I need sunglasses.",
+            "Flashbang out!",
+            "What a waste of energy...",
+            ":(",
+            "Looking for a tan?",
+            "Whoa, tone it down, glow worm.",
+            "And just like that, it's daytime.",
+            "I’ll miss my cozy darkness.",
+            "Well, someone likes to shine.",
+            "Who needs sleep, right?",
+            "Ah yes, light mode: for the brave.",
+            "Enjoy your new life as a lighthouse."
+        ];
+
+
+        function setMode(mode) {
+            if (mode === 'light') {
+                document.body.classList.add('light-mode');
+            } else {
+                document.body.classList.remove('light-mode');
+            }
+            localStorage.setItem('mode', mode);
+            
+            document.getElementById("lightModeToggle").querySelector('i').classList.toggle('fa-sun');
+            document.getElementById("lightModeToggle").querySelector('i').classList.toggle('fa-moon');
+
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            const randomMessage = messages[randomIndex]; 
+            const messageBox = document.getElementById("lm");
+            messageBox.innerHTML = randomMessage;
+        }
+
+        function toggleMode() {
+            const newMode = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+            setMode(newMode);
+        }
+
+        document.getElementById("lightModeToggle").addEventListener('click', toggleMode);
+
+        // Check localStorage and set initial mode
+        const savedMode = localStorage.getItem('mode') || 'dark';
+        setMode(savedMode);
+
+    </script>
+</body>
+</html>
