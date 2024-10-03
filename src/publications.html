@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathons - AVT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap">
+
+</head>
+<body>
+    <div class="page-container">
+        <div class="sidebar">
+            
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Adrian Vecina Tercero</a></li>
+                        <hr>
+                        <li><a href="hackathons.html">Hackathons</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+            <div class="portrait-container">
+                <img src="images/grad.jpg" alt="That's Me!" class="portrait">
+            </div>
+            <hr>
+            <div class="button-container">
+                <button class="icon-button" id="lightModeToggle"><i class="fas fa-sun"></i></button>
+
+                <a href="https://github.com/Majonez57">
+                    <button class="icon-button"><i class="fab fa-github"></i></button>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/adrian-vecina-tercero"> 
+                    <button class="icon-button"><i class="fab fa-linkedin"></i></button>
+                </a>
+
+                <a href="https://robonotts.github.io">
+                    <button class="icon-button"><i class="fab fa-android"></i></button>
+                </a>
+                
+            </div>
+            
+            <div id="lm" class="light-mode-message">...Ouch my eyes</div>
+        </div>
+        <div class="content">
+            <section id="hackathons">
+                <h1>Hackathons</h1>
+                <div class="standout-box">
+                    <h3>Featured Project</h3>
+                    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Nullam auctor, nunc id aliquam tincidunt, nisl nunc tincidunt nunc.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 3</h3>
+                    <p>Nec tincidunt nunc nunc id nunc. Sed euismod, nunc id aliquam tincidunt.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 4</h3>
+                    <p>Nisl nunc tincidunt nunc, nec tincidunt nunc nunc id nunc.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 5</h3>
+                    <p>Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 6</h3>
+                    <p>Convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 7</h3>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 8</h3>
+                    <p>Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 9</h3>
+                    <p>Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        const messages = [
+            "Why would you do that?",
+            "Well, that's... bright.",
+            "...my eyes!",
+            "Did you *really* need more light?",
+            "Oh great, now I need sunglasses.",
+            "Flashbang out!",
+            "What a waste of energy...",
+            ":(",
+            "A bold choice, I guess.",
+            "Looking for a tan?",
+            "Whoa, tone it down, glow worm.",
+            "And just like that, it's daytime.",
+            "I’ll miss my cozy darkness.",
+            "Well, someone likes to shine.",
+            "Guess night mode was overrated.",
+            "Who needs sleep, right?",
+            "Ah yes, light mode: for the brave.",
+            "Enjoy your new life as a lighthouse."
+        ];
+
+
+        document.getElementById('lightModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            const randomMessage = messages[randomIndex];
+            const messageBox = document.getElementById("lm");
+            messageBox.innerHTML = randomMessage;
+
+            this.querySelector('i').classList.toggle('fa-sun');
+            this.querySelector('i').classList.toggle('fa-moon');
+        });
+    </script>
+</body>
+</html>

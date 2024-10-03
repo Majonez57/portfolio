@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVT - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap">
+
+</head>
+<body>
+    <div class="page-container">
+        <div class="sidebar">
+            
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Adrian Vecina Tercero</a></li>
+                        <hr>
+                        <li><a href="hackathons.html">Hackathons</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="publications.html">Food</a></li>
+                        <hr>
+                    </ul>
+                </nav>
+            </div>
+            <div class="portrait-container">
+                <img src="images/main.jpg" alt="That's Me!" class="portrait">
+            </div>
+            <hr>
+            <div class="button-container">
+                <button class="icon-button" id="lightModeToggle"><i class="fas fa-sun"></i></button>
+
+                <a href="https://github.com/Majonez57">
+                    <button class="icon-button"><i class="fab fa-github"></i></button>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/adrian-vecina-tercero"> 
+                    <button class="icon-button"><i class="fab fa-linkedin"></i></button>
+                </a>
+
+                <a href="https://robonotts.github.io">
+                    <button class="icon-button"><i class="fab fa-android"></i></button>
+                </a>
+                
+            </div>
+            
+            <div id="lm" class="light-mode-message">...Ouch my eyes</div>
+        </div>
+        <div class="content">
+            <section id="home">
+                <h1>...who?</h1>
+                <p> I'm Adrian, a PhD student with the <a href="https://www.chartresearch.org">CHART</a> 
+                   research group at the <a href="https://www.nottingham.ac.uk">University of Nottingham.</a></p>
+                <p> I'm interested in all things robotic, specifically anything that brings robots closer to people! 
+                    This includes robotic embodiment design, control algorithms, and especially the applications of Machine Learning 
+                    to improve Human-Robot Collaboration. Right now I'm looking into multimodal applications of 
+                    <a href="http://www.scholarpedia.org/article/Robot_learning_by_demonstration">Learning from Demonstration (LfD)</a>,
+                    using methods to allow robots to learn from us more effectively,
+                    <b>making working alongside robots more intuitive and easy for people</b>. I'm really curious to investigate 
+                    how these methods can allow human feedback to direcly affect the autonomous actions of a robot.
+                </p>
+                <p>
+
+                </p>
+                <div class="standout-box">
+                    <h3>Contact Me?
+                    </h3>
+                    <p>The easiest way to contact me is via <a href="mailto:psyav2@nottingham.ac.uk">email.</a></p>
+                </div>
+                <p>Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</p>
+            </section>
+        </div>
+    </div>
+    <script>
+        const messages = [
+            "Why would you do that?",
+            "Well, that's... bright.",
+            "...my eyes!",
+            "Did you *really* need more light?",
+            "Oh great, now I need sunglasses.",
+            "Flashbang out!",
+            "What a waste of energy...",
+            ":(",
+            "Looking for a tan?",
+            "Whoa, tone it down, glow worm.",
+            "And just like that, it's daytime.",
+            "I’ll miss my cozy darkness.",
+            "Well, someone likes to shine.",
+            "Who needs sleep, right?",
+            "Ah yes, light mode: for the brave.",
+            "Enjoy your new life as a lighthouse."
+        ];
+
+
+        document.getElementById('lightModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            const randomMessage = messages[randomIndex];
+            const messageBox = document.getElementById("lm");
+            messageBox.innerHTML = randomMessage;
+
+            this.querySelector('i').classList.toggle('fa-sun');
+            this.querySelector('i').classList.toggle('fa-moon');
+        });
+    </script>
+</body>
+</html>

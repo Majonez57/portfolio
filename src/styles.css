@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --bg-color: #110011;
+    --content-bg: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-color: #b388ff;
+    --sidebar-bg: #2c0054;
+    --button-bg: #4b0082;
+    --button-hover: #6a1b9a;
+    --standout-bg: #4b0082;
+    --scrollbar-bg: #2c0054;
+    --scrollbar-thumb: #4b0082;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: 
+        linear-gradient(45deg, #1a001a 25%, transparent 25%),
+        linear-gradient(-45deg, #1a001a 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #1a001a 75%),
+        linear-gradient(-45deg, transparent 75%, #1a001a 75%);
+    background-size: 22px 22px;
+    background-position: 0 0, 0 11px, 11px -11px, -11px 0px;
+}
+
+.page-container {
+    display: flex;
+    max-width: 1000px;
+    background-color: var(--content-bg);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar {
+    width: fit-content;
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.menu {
+    padding-bottom: 20px;
+}
+
+.portrait-container {
+    width: auto;
+    background-color: var(--sidebar-bg);
+    padding: 5px;
+}
+
+.portrait {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    width: auto;
+    background-color: var(--sidebar-bg);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.icon-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+    background-color: var(--button-hover);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    width: 1400px;
+    overflow-y: auto;
+    max-height: calc(100vh - 40px);
+}
+
+.content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbar-bg);
+}
+
+h1 {
+    font-size:35px;
+}
+
+h1, h2, h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--button-bg);
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+nav ul li:first-child a {
+    padding: 5px;
+    font-size: 30px;
+    font-family: "Major Mono Display";
+    margin:-5px 0 -5px 0;
+    margin-bottom: 10px;
+    line-height: 0.9;
+}
+
+nav ul hr a {
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+nav ul li a:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.project {
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+.standout-box {
+    background-color: var(--standout-bg);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.standout-box h3 {
+    margin-top: 0;
+    font-size:25px;
+}
+
+.light-mode-message {
+    display: none;
+    background-color: var(--standout-bg);
+    color: var(--text-color);
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body.light-mode {
+    --bg-color: #f0f0f0cb;
+    --content-bg: #d3c3c3;
+    --text-color: #1f1e1e;
+    --accent-color: #5e24b1;
+    --sidebar-bg: #d1c4e9;
+    --button-bg: #7166d3;
+    --button-hover: #651fff;
+    --standout-bg: #ede7f6;
+    --scrollbar-bg: #d1c4e9;
+    --scrollbar-thumb: #7c4dff;
+}
+
+body.light-mode .light-mode-message {
+    display: block;
+}
