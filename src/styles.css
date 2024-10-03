@@ -28,8 +28,8 @@ body {
         linear-gradient(-45deg, #1a001a 25%, transparent 25%),
         linear-gradient(45deg, transparent 75%, #1a001a 75%),
         linear-gradient(-45deg, transparent 75%, #1a001a 75%);
-    background-size: 22px 22px;
-    background-position: 0 0, 0 11px, 11px -11px, -11px 0px;
+    background-size: 40px 40px;
+    background-position: 0 0, 0 10px, 20px -10px, -20px 0px;
 }
 
 .page-container {
