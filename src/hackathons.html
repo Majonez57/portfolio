@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathons - AVT</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hexagon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap">
 
 </head>
 <body>
-    <div class="page-container">
+    <div id="mobile-message" class="mobile-message">
+        <h1 id="mobile-message">Nice phone! Sadly this website isn't ready for it...</h1>
+        <p id="mobile-message">Try again on a bigger screen!</p>
+    </div>
+    <div id="page-container" class="page-container">
         <div class="sidebar">
             
             <div class="menu">
@@ -20,12 +25,14 @@
                         <hr>
                         <li><a href="hackathons.html">Hackathons</a></li>
                         <li><a href="publications.html">Publications</a></li>
+                        <li><a href="publications.html">Food</a></li>
+                        <li><a href="publications.html">Mess with the Background</a></li>
                         <hr>
                     </ul>
                 </nav>
             </div>
             <div class="portrait-container">
-                <img src="images/hacks.jpg" alt="That's Me!" class="portrait">
+                <img src="images/hacks.jpg" alt="Me and Whotsit Bot at HackTheBurh2023" class="portrait">
             </div>
             <hr>
             <div class="button-container">
@@ -51,49 +58,157 @@
             <section id="hackathons">
                 <h1>Hackathons</h1>
                 <div class="standout-box">
-                    <h3>Featured Project</h3>
-                    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                    <p>Hackathons are 24 hour programming events, where you and your team of up to
+                        4 hackers work on building a fun and interesting project, which are then judged for prizes.
+                        I've participated in many of these events. You can find all my projects
+                        on my <a href="https://devpost.com/avecinat">Devpost</a>. Here I list all my projects, in brief detail,
+                        alongside some lovely hexagons for any prizes we won!.
+                        Give them a click for more detail!
+                    </p>
                 </div>
                 <div class="project">
-                    <h3>Project 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="projectText">
+                        <div style="display: flex; align-items: baseline;">
+                            <h2>"Wotsitbot" <a> | HackTheBurhX </a></h2>
+                            <div class="hexagon" title="Best Demonstration"></div>
+                        </div>
+                        <p> Apparently it takes crossing the entire country for someone who loves
+                            robots to actually make one at a hackathon. This project was insane.
+                            I built and coded up this differencial drive robot from scratch using
+                            another teams rasperry pi, some parts, and lots of cardboard. 
+                            My teamates created a backend and frontend that allowed a user to pilot the
+                            robot through a computer, and click on objects, that would then be identified using
+                            a vision model. We then took that thing, and scraped it's wikipedia file to give the 
+                            user some information about it. We did 
+                            <a href="https://www.databricks.com/glossary/retrieval-augmented-generation-rag">RAG</a> 
+                            before it was cool! We also made a terrifying UML diagram to explain how the jank all worked, 
+                            which you can find on my <a href="https://devpost.com/avecinat">Devpost</a>.                             
+                        </p>
+                    </div>
+                    <img src="images/whotsitbot.jpg" title="Me fixing some semaphore flags">
                 </div>
+                <hr>
                 <div class="project">
-                    <h3>Project 2</h3>
-                    <p>Nullam auctor, nunc id aliquam tincidunt, nisl nunc tincidunt nunc.</p>
+                    <div class="projectText">
+                        <div style="display: flex; align-items: baseline;">
+                            <h2>"IP over Semaphore" <a> | HackSussex2024 </a></h2>
+                            <div class="hexagon" title="Best Hardware Hack"></div>
+                        </div>
+                        <p> We returned to Sussex, and worked on exactly the same table.
+                            This time we wanted to create an IP between two computers using just 
+                            <a href="https://en.wikipedia.org/wiki/Flag_semaphore">the contemporary semaphore flag system</a>.
+                            Each computer had a pair of flags, which moved using motors, and a camera. I used computer 
+                            vision to read the flags. Then, some magic rust code made by my teammates created an 
+                            actual network interface between the computers, at a speed of 0.02MB/s! We were able to run a 
+                            ping command <i>(mind, not in full, this would have taken over 2h!)</i>. We were able to perform the easiest 
+                            <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle attack</a> in the world,
+                            by <i>literally standing between the computers</i> with our own flags!
+                            
+                        </p>
+                    </div>
+                    <img src="images/flags.jpg" title="Me fixing some semaphore flags">
                 </div>
+                <hr>
                 <div class="project">
-                    <h3>Project 3</h3>
-                    <p>Nec tincidunt nunc nunc id nunc. Sed euismod, nunc id aliquam tincidunt.</p>
+                    <div class="projectText">
+                        <div style="display: flex; align-items: baseline;">
+                            <h2>"Human Plant Interaction" <a> | LanHack23 </a></h2>
+                            <div class="hexagon" title="Overall Second Place Hack"></div>
+                        </div>
+                        <p> Our first hack after LLM's became common-use in Hackathons. We carried
+                            a house plant to Lancaster, and stuffed it with all kinds of sensors!
+                            I built a <a href="https://en.wikipedia.org/wiki/Fuzzy_logic">fuzzy logic system </a><i>(I had just finished that module at UoN!)</i> to
+                            take sensor readings, and produce a "happyness" rating of the plant for lighting, moisture, etc.
+                            these ratings were then fed into a locally running <a href="https://www.llama.com">Llama LLM</a>
+                            to give our plant a voice! I also built it some eyes that would change depending on how the
+                            plant was feeling. It ended up being very sassy and rude, which the judges found very funny!
+                        </p>
+                    </div>
+                    <img src="images/hpi.jpg" title="The happiest plant in the world">
                 </div>
+                <hr>
                 <div class="project">
-                    <h3>Project 4</h3>
-                    <p>Nisl nunc tincidunt nunc, nec tincidunt nunc nunc id nunc.</p>
+                    <div class="projectText">
+                        <div style="display: flex; align-items: baseline;">
+                            <h2>"Analogue Automata" <a> | HackSussex2023 </a></h2>
+                        </div>
+                        <p> Analogue Automata is likely the most technically challenging hack I've ever got working.
+                            We took a <a href="https://www.radiomuseum.org/r/sony_cassette_corder_tcm_737.html">Sony TCM-737 Cassete-Corder</a> from
+                            1980, and used the recording and playing to simulate a functioning <i>(fixed-tape) </i> 
+                            <a href="https://en.wikipedia.org/wiki/Turing_machine"> Turing Machine</a>! 
+                            This gave us a head that could travel along a tape, reading or writing the values of
+                            the tape. We had to listen to <a href="https://open.spotify.com/track/6LBjeNGjY0j0E3PQt0zwdg?si=9c66d7b5b0844351">
+                            Band on the Run</a> over 50 times when we were debugging!
+                        </p>
+                    </div>
+                    <img src="images/aa.jpg" title="We absolutely covered the table with our kit">
                 </div>
+                <hr>
                 <div class="project">
-                    <h3>Project 5</h3>
-                    <p>Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed.</p>
+                    <div class="projectText">
+                        <div style="display: flex; align-items: baseline;">
+                            <h2>"Autodice" <a> | HackNotts23 </a></h2>
+                        </div>
+                        <p> A project that I desperatly want to revisit now that I know more
+                            computer vision. The idea was to use a webcam, taped to a desk lamp,
+                            to read the values of dice rolled in a tray. Sadly this was a greater challenge than
+                            expected, as the dice were all different colours and shapes. 
+                        </p>
+                    </div>
                 </div>
+                <hr>
                 <div class="project">
-                    <h3>Project 6</h3>
-                    <p>Convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</p>
+                    <div class="projectText">
+                        <div style="display: flex; align-items: baseline;">
+                            <h2>"Linguini" <a> | HackTheMidlands 7.0 </a></h2>
+                            <div class="hexagon" title="BCS - Good For Society Prize"></div>
+                        </div>
+                        <p> For this hackathon, we wanted to do something useful, so we set out to build a mobile app 
+                            that could take a picture of your fridge, and suggest recipes to use leftover ingredients up. 
+                            This was before the times of the
+                            <a href="https://platform.openai.com/docs/guides/vision">easy to use vision models</a> 
+                            so we had to take around 500 pictures, 
+                            training a custom <i>(And terrible)</i> YOLO model with them. My teammate made a simple flutter app. While this project was
+                            a bit boring, the prize was <a href="https://store.arduino.cc/products/arduino-mega-2560-rev3">two Arduino Mega 2560s</a>
+                            and lots of electronic compontents. You'll spot these in almost every hack after this one.
+                        </p>
+                    </div>
                 </div>
+                <hr>
                 <div class="project">
-                    <h3>Project 7</h3>
-                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+                    <div class="projectText">
+                        <div style="display: flex; align-items: baseline;">
+                            <h2>"Clooney" <a> | DurHack2021 </a></h2>
+                            <div class="hexagon" title="Best Hardware Hack"></div>
+                            <div class="hexagon" title="Overall Second Place Hack"></div>
+                        </div>
+                        <p>My first Hackathon! 
+                            We took a broken <a href="https://www.nespresso.com/uk/en/coffee-machines-vertuo">Nespresso Vertuo</a>
+                            machine, and implemented the <a href="https://www.rfc-editor.org/rfc/rfc2324">RFS April Fools 1998: RFS-2324: HTCPCP</a>
+                            protocol, allowing intercommunication between computers and coffee machines using TCP packets. The whole weekend was
+                            a bit crazy, and it's one of my favorite hackathon stories. 
+                        </p>
+                    </div>
+                    <img src="images/clooney.jpg" title="Clooney the Coffee Machine">
                 </div>
-                <div class="project">
-                    <h3>Project 8</h3>
-                    <p>Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
-                </div>
-                <div class="project">
-                    <h3>Project 9</h3>
-                    <p>Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta.</p>
-                </div>
+
             </section>
         </div>
     </div>
     <script>
+
+        // No phones please!
+        // Function to detect small screen width (e.g., typical mobile device width)
+        function isSmallScreen() {
+            return window.innerWidth <= 768;  // Typical mobile and tablet width breakpoint
+        }
+
+        // Display message if on a small screen (mobile/tablet) and hide regular content
+        if (isSmallScreen()) {
+            document.getElementById('mobile-message').style.display = 'block';  // Show mobile message
+            document.getElementById("page-container").style.display = 'none';  // Hide main content
+        }
+
         const messages = [
             "Why would you do that?",
             "Well, that's... bright.",
@@ -114,7 +229,6 @@
             "Ah yes, light mode: for the brave.",
             "Enjoy your new life as a lighthouse."
         ];
-
 
         document.getElementById('lightModeToggle').addEventListener('click', function() {
             document.body.classList.toggle('light-mode');

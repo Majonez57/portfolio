@@ -10,7 +10,11 @@
 
 </head>
 <body>
-    <div class="page-container">
+    <div id="mobile-message" class="mobile-message">
+        <h1 id="mobile-message">Nice phone! Sadly this website isn't ready for it...</h1>
+        <p id="mobile-message">Try again on a bigger screen!</p>
+    </div>
+    <div id="page-container" class="page-container">
         <div class="sidebar">
             
             <div class="menu">
@@ -60,26 +64,56 @@
                     <a href="http://www.scholarpedia.org/article/Robot_learning_by_demonstration">Learning from Demonstration (LfD)</a>,
                     using methods to allow robots to learn from us more effectively,
                     <b>making working alongside robots more intuitive and easy for people</b>. I'm really curious to investigate 
-                    how these methods can allow human feedback to direcly affect the autonomous actions of a robot.
+                    how these methods can allow both verbal and non-verbal human feedback to direcly affect the 
+                    autonomous actions of a robot.
                 </p>
                 <p>
-
+                    I've also been particularly fond of interesting ways to communicate with robots. In my
+                    4th year research project I peered into urban search and rescue robots, and devised a way to use a <a href="https://www.bhaptics.com/en/tactsuit/tactsuit-x40/"
+                    >vest plastered in motors</a> to communicate realtime information to a user, without the need to obscure the 
+                    visual or auditory channels. This involved working with one of my favorite robots, 
+                    <a href="https://bostondynamics.com/products/spot/">Spot!</a> This research project was further refined into my first
+                    academic paper: <i>Vibrotactile information coding strategies for a
+                        body-worn vest to aid robot-human collaboration</i>, which has been accepted for the 
+                        <a href="https://icsr2024.dk">2024 International Conference on Social Robotics</a>.
+                </p>
+                <p>
+                    Beyond my research interests, I also oversee the <a href="https://robonotts.github.io">RoboNotts Robotics Team</a> on
+                    campus, having led it for almost 3 years now, and winning a few competitions here and there. I'm also a huge hackathon
+                    enjoyer, bashing hardware together all over the UK. Leaving computer science alone now, my hobbies include cooking 
+                    all sorts of meals, playing big heavy board games, and of course the occasional 400 hour <a href="https://www.factorio.com">factorio</a> save...
                 </p>
                 <div class="standout-box">
                     <h3>Contact Me?
                     </h3>
-                    <p>The easiest way to contact me is via <a href="mailto:psyav2@nottingham.ac.uk">email.</a></p>
+                    <p>
+                        If you need to reach me for absolutely anything, the easiest way to contact me is
+                        via <a href="mailto:psyav2@nottingham.ac.uk">email</a>. I'm always happy to chat! 
+                    </p>
                 </div>
-                <p>Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.</p>
+                <p>Want <i>more</i> Adrian? I don't blame you! Have a look at the pages on the left for all my other stuff!</p>
             </section>
         </div>
     </div>
     <script>
+
+        // No phones please!
+        // Function to detect small screen width (e.g., typical mobile device width)
+        function isSmallScreen() {
+            return window.innerWidth <= 768;  // Typical mobile and tablet width breakpoint
+        }
+
+        // Display message if on a small screen (mobile/tablet) and hide regular content
+        if (isSmallScreen()) {
+            document.getElementById('mobile-message').style.display = 'block';  // Show mobile message
+            document.getElementById("page-container").style.display = 'none';  // Hide main content
+        }
+
         const messages = [
             "Why would you do that?",
             "Well, that's... bright.",
             "...my eyes!",
-            "Did you *really* need more light?",
+            "for what purpose?",
             "Oh great, now I need sunglasses.",
             "Flashbang out!",
             "What a waste of energy...",
@@ -106,6 +140,7 @@
             this.querySelector('i').classList.toggle('fa-sun');
             this.querySelector('i').classList.toggle('fa-moon');
         });
+
     </script>
 </body>
 </html>

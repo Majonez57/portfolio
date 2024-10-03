@@ -5,6 +5,7 @@
     --content-bg: #1a1a1a;
     --text-color: #e0e0e0;
     --accent-color: #b388ff;
+    --accent-color2: #d3879a;
     --sidebar-bg: #2c0054;
     --button-bg: #4b0082;
     --button-hover: #6a1b9a;
@@ -23,14 +24,19 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    transition: all 0.3s;
     background-image: 
-        linear-gradient(45deg, #1a001a 25%, transparent 25%),
-        linear-gradient(-45deg, #1a001a 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #1a001a 75%),
-        linear-gradient(-45deg, transparent 75%, #1a001a 75%);
+        linear-gradient(45deg, #270027 25%, transparent 25%),
+        linear-gradient(-45deg, #270027 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #270027 75%),
+        linear-gradient(-45deg, transparent 75%, #270027 75%);
     background-size: 40px 40px;
     background-position: 0 0, 0 10px, 20px -10px, -20px 0px;
 }
+/* KITES: 0 0,0 10px, 0 -10px, 0 0;*/
+/* CHECKERBOARD A: 0 0, 0 0, 0 0, 0 0*/
+/* CHECKERBOARD B: 20px 20px, 20px -20px, -20px -20px, -20px 20px;*/
+/* THORNS: 0 0, 0 10px, 20px -10px, -20px 0px;*/
 
 .page-container {
     display: flex;
@@ -40,7 +46,7 @@ body {
 }
 
 .sidebar {
-    width: fit-content;
+    width: 20%;
     background-color: var(--sidebar-bg);
     color: var(--text-color);
     padding: 20px;
@@ -63,7 +69,7 @@ body {
 
 .portrait {
     width: 100%;
-    height: 400px;
+    height: 360px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -78,11 +84,26 @@ body {
     border-radius: 10px;
 }
 
+.light-mode-message {
+    display: none;
+    background-color: var(--standout-bg);
+    color: var(--text-color);
+    width: 100%;
+    padding: 5px;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .icon-button {
     background-color: var(--button-bg);
     color: var(--text-color);
     border: none;
-    padding: 14px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -94,9 +115,8 @@ body {
 
 .content {
     flex-grow: 1;
-    padding: 40px;
-    width: 1400px;
-    overflow-y: auto;
+    padding: 30px;
+    overflow-y: scroll;
     max-height: calc(100vh - 40px);
 }
 
@@ -173,8 +193,37 @@ img {
 }
 
 .project {
-    margin-bottom: 20px;
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
 }
+
+.projectText p{
+    gap: 5px;
+    margin-top: 1px;
+    line-height: 1.1;
+}
+
+.project h2 {
+    margin: 5px 0 5px 0;
+}
+
+.project h2 a {
+    color: var(--accent-color2);
+    font-style: italic;
+    font-size: 15px;
+    margin-right: 5px; /*Get the Hexagons away*/
+}
+
+.project img {
+    object-fit: contain;
+    border-radius: 5px;
+    width: 20%;
+}
+
 
 a {
     color: var(--accent-color);
@@ -194,23 +243,39 @@ a {
     font-size:25px;
 }
 
-.light-mode-message {
-    display: none;
-    background-color: var(--standout-bg);
+.mobile-message h1{
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 5px;
+    font-size: 12vw;
+    font-family: "Major Mono Display";
+    line-height: 0.8;
+}
+
+.mobile-message p {
+    padding: 5px;
+    font-size: 5vw;
+    font-family: "poppins";
+    line-height: 0.9;
+}
+
+.mobile-message {
     color: var(--text-color);
-    padding: 10px;
+    display: none;
+    display: flex;
     text-align: center;
-    font-weight: bold;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 1px 1px;
+    border-radius: 5px;
+    display: none;
+    width: 80%;
 }
 
 body.light-mode {
     --bg-color: #f0f0f0cb;
-    --content-bg: #d3c3c3;
+    --content-bg: #f0e5e1;
     --text-color: #1f1e1e;
     --accent-color: #5e24b1;
+    --accent-color2: #945050;
     --sidebar-bg: #d1c4e9;
     --button-bg: #7166d3;
     --button-hover: #651fff;
