@@ -192,6 +192,38 @@ img {
     margin-bottom: 10px;
 }
 
+.paper {
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.paperText {
+    gap: 5px;
+    margin-top: 1px;
+    line-height: 1.1;
+}
+
+.paperText p {
+    gap: 5px;
+    margin-top: 1px;
+    line-height: 1.1;
+    font-size: 14px;
+}
+
+.paperText p b {
+    color: var(--accent-color2);
+    font-style: italic;
+    font-size: 15px;
+}
+
+.paperLink {
+    font-size: 12px;
+}
+
 .project {
     display: flex;
     margin-bottom: 5px;
