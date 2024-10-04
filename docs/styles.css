@@ -112,22 +112,17 @@ button {
     transition: background-color 0.3s;
 }
 
-.animationButton {
-    width: 100%;
-}
-
 button:hover {
     background-color: var(--button-hover);
 }
 
-.icon-button {
-    background-color: var(--button-bg);
-    color: var(--text-color);
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.sb {
+    width: 50%;
+    font-size: 12px;
+}
+
+.turboButton2 {
+    height: 35px;
 }
 
 .content {

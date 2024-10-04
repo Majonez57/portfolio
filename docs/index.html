@@ -34,7 +34,10 @@
                 <img src="images/main.jpg" alt="That's Me!" class="portrait">
             </div>
             <hr>
-                <button class="animationButton" id="animationToggle"><b>Disable Animations</b></button>
+                <div class="button-container">
+                    <button class="animationButton sb" id="animationToggle"><b>Disable Animations</b></button>
+                    <button class="turboButton sb" id="turboToggle"><b>Turbo Mode!</b></button>
+                </div>
             <hr>
             <div class="button-container">
                 <button class="icon-button" id="lightModeToggle"><i class="fas fa-sun"></i></button>
@@ -72,7 +75,7 @@
                     <a href="http://www.scholarpedia.org/article/Robot_learning_by_demonstration">Learning from Demonstration (LfD)</a>,
                     using methods to allow robots to learn from us more effectively,
                     <b>making working alongside robots more intuitive and easy for people</b>. I'm really curious to investigate 
-                    how these methods can allow both verbal and non-verbal human feedback to direcly affect the 
+                    how these methods can allow both verbal and non-verbal human feedback to directly affect the 
                     autonomous actions of a robot.
                 </p>
                 <p>
@@ -108,9 +111,11 @@
     <script>
         //Animation!
         const def = [0,0,0,10,20,-10,-20,0];
+        const animationButton = document.getElementById('animationToggle');
+        const turboButton = document.getElementById('turboToggle');
         var poss = [0,0,0,10,20,-10,-20,0];
         var doAnimate = true;
-        const animationButton = document.getElementById('animationToggle');
+        var doTurbo = false;
 
         function updateBackground() {
             document.body.style.backgroundPosition = 
@@ -137,17 +142,31 @@
         function animationToggle() {
             doAnimate = !(doAnimate);
             if (doAnimate) {
-                animationButton.innerHTML = "<b>Disable Animations</b>"
+                animationButton.innerHTML = "<b>Disable Animations</b>";
             } else {
-                animationButton.innerHTML = "<b>Enable Animations</b>"
+                animationButton.innerHTML = "<b>Enable Animations</b>";
                 poss = def
                 updateBackground();
             }
         }
 
-        animationButton.addEventListener('click', animationToggle);
+        function turboToggle() {
+            doTurbo = !(doTurbo)
+            if (doTurbo) {
+                clearInterval(inter);
+                inter = window.setInterval(randomizer, 1800);
+                turboButton.innerHTML = "<b>Turbo Mode!</b>";
+            } else {
+                clearInterval(inter);
+                inter = window.setInterval(randomizer, 200);
+                turboButton.innerHTML = "<b>Normal Mode</b>";
+            }
+        }
 
-        window.setInterval(randomizer, 1800);
+        animationButton.addEventListener('click', animationToggle);
+        turboButton.addEventListener('click', turboToggle);
+
+        var inter = window.setInterval(randomizer, 1800);
 
     </script>
     <script>
