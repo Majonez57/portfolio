@@ -108,13 +108,13 @@
                 return
             }
             var choice = Math.floor(Math.random()*7);
-            var sign = Math.floor(Math.random()*4)-2;
-            poss[choice] = poss[choice] + (5*sign);
+            var sign = Math.pow(-1, Math.floor(Math.random()*1));
+            poss[choice] = poss[choice] + (10*sign);
 
             if (poss[choice] > 20) {
-                poss[choice] = 15;
+                poss[choice] = 0;
             } else if (poss[choice] < -20) {
-                poss[choice] = -15;
+                poss[choice] = 0;
             }
             updateBackground();
         }
