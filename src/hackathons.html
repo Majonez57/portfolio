@@ -26,7 +26,7 @@
                         <hr>
                         <li><a href="hackathons.html">Hackathons</a></li>
                         <li><a href="publications.html">Publications</a></li>
-                        <li><a href="publications.html">Food</a></li>
+                        <li><a href="food.html">Food</a></li>
                         <li><a href="background.html">Mess with the Background</a></li>
                         <hr>
                     </ul>
@@ -35,6 +35,8 @@
             <div class="portrait-container">
                 <img src="images/hacks.jpg" alt="Me and Whotsit Bot at HackTheBurh2023" class="portrait">
             </div>
+            <hr>
+                <button class="animationButton" id="animationToggle"><b>Disable Animations</b></button>
             <hr>
             <div class="button-container">
                 <button class="icon-button" id="lightModeToggle"><i class="fas fa-sun"></i></button>
@@ -196,6 +198,51 @@
             </section>
         </div>
     </div>
+    <script>
+        //Animation!
+        const def = [0,0,0,10,20,-10,-20,0];
+        var poss = [0,0,0,10,20,-10,-20,0];
+        var doAnimate = true;
+        const animationButton = document.getElementById('animationToggle');
+
+        function updateBackground() {
+            document.body.style.backgroundPosition = 
+                        `${poss[0]}px ${poss[1]}px, ${poss[2]}px ${poss[3]}px, ${poss[4]}px ${poss[5]}px, ${poss[6]}px ${poss[7]}px`;
+                    
+        }
+
+        function randomizer() {
+            if (!(doAnimate)) {
+                return
+            }
+            var choice = Math.floor(Math.random()*7);
+            var sign = Math.floor(Math.random()*4)-2;
+            poss[choice] = poss[choice] + (5*sign);
+
+            if (poss[choice] > 20) {
+                poss[choice] = 15;
+            } else if (poss[choice] < -20) {
+                poss[choice] = -15;
+            }
+            updateBackground();
+        }
+
+        function animationToggle() {
+            doAnimate = !(doAnimate);
+            if (doAnimate) {
+                animationButton.innerHTML = "<b>Disable Animations</b>"
+            } else {
+                animationButton.innerHTML = "<b>Enable Animations</b>"
+                poss = def
+                updateBackground();
+            }
+        }
+
+        animationButton.addEventListener('click', animationToggle);
+
+        window.setInterval(randomizer, 1800);
+
+    </script>
     <script>
 
         // No phones please!
