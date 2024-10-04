@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathons - AVT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap">
+    <link rel="icon" type="image/png" href="images/fav.PNG">
+
+</head>
+<body>
+    <a href="background.html"><button><b>I want to go back!</b></button></a>
+
+    <script>
+        //Animation!
+        const def = [0,0,0,10,20,-10,-20,0];
+        var poss = [0,0,0,10,20,-10,-20,0];
+
+        function updateBackground() {
+            document.body.style.backgroundPosition = 
+                        `${poss[0]}px ${poss[1]}px, ${poss[2]}px ${poss[3]}px, ${poss[4]}px ${poss[5]}px, ${poss[6]}px ${poss[7]}px`;
+                    
+        }
+
+        function randomizer() {
+            var choice = Math.floor(Math.random()*7);
+            var sign = Math.pow(-1, Math.floor(Math.random()*1));
+            poss[choice] = poss[choice] + (10*sign);
+
+            if (poss[choice] > 20) {
+                poss[choice] = 0;
+            } else if (poss[choice] < -20) {
+                poss[choice] = 0;
+            }
+            updateBackground();
+        }
+
+        window.setInterval(randomizer, 1300);
+
+    </script>        
+</body>
+</html>
