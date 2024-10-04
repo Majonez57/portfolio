@@ -37,7 +37,7 @@ body {
 /* CHECKERBOARD A: 0 0, 0 0, 0 0, 0 0*/
 /* CHECKERBOARD B: 20px 20px, 20px -20px, -20px -20px, -20px 20px;*/
 /* THORNS: 0 0, 0 10px, 20px -10px, -20px 0px;*/
-/* ISO: -20px 20px, 0px 0px, 20px 0px, -19px 20px*/
+/* ISO: -20px 20px, 0px 0px, 20px 0px, -20px 20px*/
 
 .page-container {
     display: flex;
