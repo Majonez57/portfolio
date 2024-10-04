@@ -71,10 +71,21 @@
                 <div class="standout-box">
                     Use the following buttons and sliders to have fun with the background!
                 </div>
+                
 
                 <div class="controlpanel">
+                    <hr>
+                    <div class="topbar">
+                        <h3>Gradient Positions</h3>
+                        
+                        <div class="check">
+                            <b>Differenciate Gradients</b>
+                            <input type="checkbox" id="colours" name="colours" onchange="checkColours(this)">
+                        </div>
+                        <button id="resetbutton">Reset Positions</button>
+                    </div>
 
-                    <div class="slidercont">
+                    <div class="slidercont sliderA">
                         <label for="bg1-x"> <b>Gradient A </b>| <b>x</b>: <span id="ax"></span></label>
                         <input type="range" id="bg1-x" min="-20" max="20" value="0" class="slider">
                         <label for="bg1-y"> <b>y</b>: <span id="ay"></span></label>
@@ -84,7 +95,7 @@
                         <hr>
                     </div>
 
-                    <div class="slidercont">
+                    <div class="slidercont sliderB">
                         <label for="bg2-x"> <b>Gradient B </b>| <b>x</b>: <span id="bx"></span></label>
                         <input type="range" id="bg2-x" min="-20" max="20" value="0" class="slider">
                         <label for="bg2-y"> <b>y</b>: <span id="by"></span></label>
@@ -94,7 +105,7 @@
                         <hr>
                     </div>
 
-                    <div class="slidercont">
+                    <div class="slidercont sliderC">
                         <label for="bg3-x"> <b>Gradient C </b>| <b>x</b>: <span id="cx"></span></label>
                         <input type="range" id="bg3-x" min="-20" max="20" value="20" class="slider">
                         <label for="bg3-y"> <b>y</b>: <span id="cy"></span></label>
@@ -104,7 +115,7 @@
                         <hr>
                     </div>
 
-                    <div class="slidercont">
+                    <div class="slidercont sliderD">
                         <label for="bg4-x"> <b>Gradient D </b>| <b>x</b>: <span id="dx"></span></label>
                         <input type="range" id="bg4-x" min="-20" max="20" value="-20" class="slider">
                         <label for="bg4-y"> <b>y</b>: <span id="dy"></span></label>
@@ -113,9 +124,12 @@
                         <input type="range" id="bg4-t" min="-90" max="90" value="-45" class="slider">
                         <hr>
                     </div>
+
                 </div>
             </section>
             <script>
+                // Sliders and Slider reset
+
                 // There's probably a better way to do this lol
                 const bg1XSlider = document.getElementById('bg1-x');
                 const bg1YSlider = document.getElementById('bg1-y');
@@ -148,7 +162,9 @@
                 const bg4XOut = document.getElementById('dx');
                 const bg4YOut = document.getElementById('dy');
                 const bg4TOut = document.getElementById('dt');
-        
+
+                var doCols = false;
+
                 // Function to update the background position
                 function updateBackgroundPosition() {
                     const bg1X = bg1XSlider.value;
@@ -171,11 +187,19 @@
                     document.body.style.backgroundPosition = 
                         `${bg1X}px ${bg1Y}px, ${bg2X}px ${bg2Y}px, ${bg3X}px ${bg3Y}px, ${bg4X}px ${bg4Y}px`;
                     
+                    if (doCols) {
+                        document.body.style.backgroundImage = 
+                        `linear-gradient(${bg1T}deg, var(--gA) 25%, transparent 25%),
+                         linear-gradient(${bg2T}deg, var(--gB) 25%, transparent 25%),
+                         linear-gradient(${bg3T}deg, transparent 75%, var(--gC) 75%),
+                         linear-gradient(${bg4T}deg, transparent 75%, var(--gD) 75%)`;
+                    } else {
                         document.body.style.backgroundImage = 
                         `linear-gradient(${bg1T}deg, #270027 25%, transparent 25%),
                          linear-gradient(${bg2T}deg, #270027 25%, transparent 25%),
                          linear-gradient(${bg3T}deg, transparent 75%, #270027 75%),
                          linear-gradient(${bg4T}deg, transparent 75%, #270027 75%)`;
+                    }
 
                     bg1XOut.innerHTML = bg1X+'px';
                     bg1YOut.innerHTML = bg1Y+'px';
@@ -206,6 +230,34 @@
                 bg4XSlider.addEventListener('input', updateBackgroundPosition);
                 bg4YSlider.addEventListener('input', updateBackgroundPosition);
                 bg4TSlider.addEventListener('input', updateBackgroundPosition);
+
+                function resetpositions() {
+
+                    bg1XSlider.value = 0;
+                    bg1YSlider.value = 0;
+                    bg1TSlider.value = 45;
+
+                    bg2XSlider.value = 0;
+                    bg2YSlider.value = 10;
+                    bg2TSlider.value = -45;
+
+                    bg3XSlider.value = 20;
+                    bg3YSlider.value = 10;
+                    bg3TSlider.value = 45;
+
+                    bg4XSlider.value = -20;
+                    bg4YSlider.value = 0;
+                    bg4TSlider.value = -45;    
+
+                    updateBackgroundPosition();
+                }
+
+                function checkColours(checkboxElem) {
+                    doCols = !(doCols)
+                    updateBackgroundPosition();
+                }
+
+                document.getElementById('resetbutton').addEventListener('click', resetpositions)
         
                 // Initialize the background position on page load
                 updateBackgroundPosition();

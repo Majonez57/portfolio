@@ -4,8 +4,7 @@
     --bg-color: #110011;
     --content-bg: #1a1a1a;
     --text-color: #e0e0e0;
-    --accent-color: 
-    
+    --accent-color: #b388ff;
     --accent-color2: #d3879a;
     --sidebar-bg: #2c0054;
     --button-bg: #4b0082;
@@ -101,6 +100,21 @@ body {
     z-index: 1000;
 }
 
+button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
 .icon-button {
     background-color: var(--button-bg);
     color: var(--text-color);
@@ -109,10 +123,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.icon-button:hover {
-    background-color: var(--button-hover);
 }
 
 .content {
