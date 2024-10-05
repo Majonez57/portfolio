@@ -13,7 +13,6 @@
     <div id="mobile-message" class="mobile-message">
         <h1 id="mobile-message">Nice phone! Sadly this website isn't ready for it...</h1>
         <p id="mobile-message">Try again on a bigger screen!</p>
-        <button id="mobile-bypass"><b style="font-size: 4vw;">Let me in anyway!<b></button>
     </div>
     <div id="page-container" class="page-container">
         <div class="sidebar">
@@ -25,7 +24,7 @@
                         <hr>
                         <li><a href="hackathons.html">Hackathons</a></li>
                         <li><a href="publications.html">Publications</a></li>
-                        <!--<li><a href="food.html">Food</a></li>-->
+                        <li><a href="food.html">Food</a></li>
                         <li><a href="background.html">Mess with the Background</a></li>
                         <hr>
                     </ul>
@@ -109,9 +108,81 @@
             </section>
         </div>
     </div>
-    <script src="scripts/animation.js"></script>
-    <script src="scripts/mobile.js"></script>
     <script>
+        //Animation!
+        const def = [0,0,0,10,20,-10,-20,0];
+        const animationButton = document.getElementById('animationToggle');
+        const turboButton = document.getElementById('turboToggle');
+        var poss = [0,0,0,10,20,-10,-20,0];
+        var doAnimate = true;
+        var doTurbo = false;
+
+        function updateBackground() {
+            document.body.style.backgroundPosition = 
+                        `${poss[0]}px ${poss[1]}px, ${poss[2]}px ${poss[3]}px, ${poss[4]}px ${poss[5]}px, ${poss[6]}px ${poss[7]}px`;
+                    
+        }
+
+        function randomizer() {
+            if (!(doAnimate)) {
+                return
+            }
+            var choice = Math.floor(Math.random()*7);
+            var sign = Math.pow(-1, Math.floor(Math.random()*1));
+            poss[choice] = poss[choice] + (10*sign);
+
+            if (poss[choice] > 20) {
+                poss[choice] = 0;
+            } else if (poss[choice] < -20) {
+                poss[choice] = 0;
+            }
+            updateBackground();
+        }
+
+        function animationToggle() {
+            doAnimate = !(doAnimate);
+            if (doAnimate) {
+                animationButton.innerHTML = "<b>Disable Animations</b>";
+            } else {
+                animationButton.innerHTML = "<b>Enable Animations</b>";
+                poss = def
+                updateBackground();
+            }
+        }
+
+        function turboToggle() {
+            doTurbo = !(doTurbo)
+            if (doTurbo) {
+                clearInterval(inter);
+                inter = window.setInterval(randomizer, 1800);
+                turboButton.innerHTML = "<b>Turbo Mode!</b>";
+            } else {
+                clearInterval(inter);
+                inter = window.setInterval(randomizer, 200);
+                turboButton.innerHTML = "<b>Normal Mode</b>";
+            }
+        }
+
+        animationButton.addEventListener('click', animationToggle);
+        turboButton.addEventListener('click', turboToggle);
+
+        var inter = window.setInterval(randomizer, 1800);
+
+    </script>
+    <script>
+
+        // No phones please!
+        // Function to detect small screen width (e.g., typical mobile device width)
+        function isSmallScreen() {
+            return window.innerWidth <= 768;  // Typical mobile and tablet width breakpoint
+        }
+
+        // Display message if on a small screen (mobile/tablet) and hide regular content
+        if (isSmallScreen()) {
+            document.getElementById('mobile-message').style.display = 'block';  // Show mobile message
+            document.getElementById("page-container").style.display = 'none';  // Hide main content
+        }
+
         const messages = [
             "Why would you do that?",
             "Well, that's... bright.",

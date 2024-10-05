@@ -25,7 +25,7 @@
                         <hr>
                         <li><a href="hackathons.html">Hackathons</a></li>
                         <li><a href="publications.html">Publications</a></li>
-                        <!--<li><a href="food.html">Food</a></li>-->
+                        <li><a href="food.html">Food</a></li>
                         <li><a href="background.html">Mess with the Background</a></li>
                         <hr>
                     </ul>
@@ -272,6 +272,19 @@
         }
     </script>
     <script>
+
+        // No phones please!
+        // Function to detect small screen width (e.g., typical mobile device width)
+        function isSmallScreen() {
+            return window.innerWidth <= 768;  // Typical mobile and tablet width breakpoint
+        }
+
+        // Display message if on a small screen (mobile/tablet) and hide regular content
+        if (isSmallScreen()) {
+            document.getElementById('mobile-message').style.display = 'block';  // Show mobile message
+            document.getElementById("page-container").style.display = 'none';  // Hide main content
+        }
+
         const messages = [
             "Why would you do that?",
             "Well, that's... bright.",
