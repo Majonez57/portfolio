@@ -12,9 +12,8 @@
 </head>
 <body>
     <div id="mobile-message" class="mobile-message">
-        <h1 id="mobile-message">Nice phone! Sadly this website isn't ready for it...</h1>
+        <h1 id="mobile-message">Sorry, this doesn't work on mobile...</h1>
         <p id="mobile-message">Try again on a bigger screen!</p>
-        <button id="mobile-bypass"><b style="font-size: 4vw;">Let me in anyway!<b></button>
     </div>
     <div id="page-container" class="page-container">
         <div class="sidebar">
@@ -266,7 +265,12 @@
             </script>
         </div>
     </div>
-    <script src="scripts/mobile.js"></script>
+    <script>
+        if (window.innerWidth <= 768) {
+            document.getElementById('mobile-message').style.display = 'flex'; 
+            document.getElementById("page-container").style.display = 'none';
+        }
+    </script>
     <script>
         const messages = [
             "Why would you do that?",
