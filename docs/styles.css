@@ -245,6 +245,10 @@ img {
     gap: 5px;
 }
 
+.projectText {
+    width: 75%;
+}
+
 .projectText p{
     gap: 5px;
     margin-top: 1px;
@@ -265,7 +269,7 @@ img {
 .project img {
     object-fit: contain;
     border-radius: 5px;
-    width: 20%;
+    width: 25%;
 }
 
 
