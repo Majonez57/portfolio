@@ -268,7 +268,7 @@ img {
 }
 
 .project img {
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 5px;
     width: 25%;
 }
