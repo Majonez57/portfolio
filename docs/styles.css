@@ -223,13 +223,13 @@ img {
     gap: 5px;
     margin-top: 1px;
     line-height: 1.1;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .paperText p b {
     color: var(--accent-color2);
     font-style: italic;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .paperLink {
