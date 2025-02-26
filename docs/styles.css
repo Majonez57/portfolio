@@ -42,7 +42,8 @@ body {
 
 .page-container {
     display: flex;
-    width: 50vw;
+    width: 40vw;
+    max-width: 900px;
     background-color: var(--content-bg);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     min-width: none;
@@ -50,6 +51,7 @@ body {
 
 .sidebar {
     width: 12vw;
+    max-width: 210px;
     background-color: var(--sidebar-bg);
     color: var(--text-color);
     position: static;
