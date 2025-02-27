@@ -223,6 +223,11 @@ img {
     line-height: 1.1;
 }
 
+.paperText h3 {
+    font-size: 25px;
+    margin-top: 1px;
+}
+
 .paperText p {
     gap: 5px;
     margin-top: 1px;
