@@ -26,7 +26,7 @@
                     <li><a href="hackathons.html">Hackathons</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="talks.html">Projects & Talks</a></li>
-                    <li><a href="food.html">Food</a></li>
+                    <!--<li><a href="food.html">Food</a></li> -->
                     <li><a href="background.html">The Background</a></li>
                     <hr>
                 </ul>
@@ -61,18 +61,17 @@
     </div>
     <div id="page-container" class="page-container">
         
-
         <div class="content">
             <section id="hackathons">
                 <h1>Hackathons</h1>
                 <hr>
                 <div class="standout-box">
                     <p> Hackathons are typically 24 hour programming events, where you and your team of up to
-                        4 hackers work on building a fun and interesting project. These projects are then judged for prizes.
+                        4 hackers work on building fun and interesting projects which are then judged for prizes.
                         I've participated in many, and here you can see some of my personal summaries of each one. 
                         The yellow hexagons represent prizes, hover over them to see more details!
-                        If you're more curious about the technical details check my <a href="https://devpost.com/avecinat">Devpost</a>.                        
-                        Give them a click for more detail!
+                        If you're more curious about technical details, my <a href="https://devpost.com/avecinat">Devpost</a> goes into 
+                        more depth.                        
                     </p>
                 </div>
                 <div class="project">
@@ -82,11 +81,11 @@
                             <div class="hexagon" title="First Place!"></div>
                         </div>
                         <p> My first corporate hackathon, where a company (<a href="https://www.nio.com/">NIO</a>) put forwards an 
-                            interesting computer-vision based challenge: taking image renders of 2D meshes and generating 
+                            interesting challenge: taking image renders of 2D meshes and using computer-vision to estimate 
                             the <a href="https://en.wikipedia.org/wiki/Nastran">Nastran</a> code that originally described them. We came
                             up with a method that combined both computer vision and geometric reconstruction techniques to
                             sucessfully reproduce all the examples to a very high level of accuracy. Unlike most hackathons,
-                            we had a month for this one, so we gave it a few hours each week to complete. We scored 99.7%, which 
+                            we had a month for this one, so we gave it a few hours each week. We scored 99.7%, which 
                             meant we reconstructed every test case correctly with only a 0.3% error margin. We were very very happy 
                             with this as it was near the theoretical limit due to pixel loss. We also got to make a really clean paper explaining the
                             method, which you can see <a href="https://lnkd.in/p/ecYnVceW">here!</a>                    
@@ -102,10 +101,10 @@
                         </div>
                         <p> While a tad disastrous, we had a great time modding a toaster to print images
                             onto bread at AstonHack10. The project relied on a £4 toaster from a charity shop,
-                            as well as some 3D printed bits. We painstakingly rewired the heating elements to instead
-                            act like pixels we could individually actuate through a relay board, and built a system to
-                            lift and drop the bread. Suprisingly, the project actually came along really well, and everything
-                            worked as expecdted. Sadly the resolution was very poor, and we were never able to make a really
+                            as well as some 3D printed bits. We painstakingly rewired the heating elements such that they
+                            could act like pixels that could be individually actuated through a relay board. We then built a system to
+                            slowly lift the bread as we "printed". Suprisingly, the project actually came along really well, and everything
+                            worked as expecdted. Sadly the "resolution" was very poor, and we were never able to make a really
                             good image, but it was still fun. Video <a href="https://lnkd.in/dvntxpM9">here!</a>. 
                         </p>
                     </div>
@@ -118,14 +117,14 @@
                             <h2>"Dial-Up Detective" <a> | RoyalHackaway V8 </a></h2>
                             <div class="hexagon" title="Hacker's Favorite Hack"></div>
                         </div>
-                        <p> This time we were at Royal Holloway with some more old Hardware! We used an original 
-                            <a href="https://www.gporetro.com/rotary-dial-phones/gpo-746-rotary/">1969's rotary telephone</a>, and incorporated it into a game! 
-                            In the game you played the role of a detective, using the phone to call up suspects and sus out the killer! 
+                        <p> This time we were at Royal Holloway with some more old Hardware! We incorporated  
+                            <a href="https://www.gporetro.com/rotary-dial-phones/gpo-746-rotary/">a rotary telephone from 1969</a>, into a game. 
+                            In the game you played the role of a detective, using the phone to call up suspects and find out the killer! 
                             Unsurprisingly, working with 60 year old analogue tech is hard. 
                             We couldn't make the phone ring, since that required alternating 45-90V... dangerous. 
-                            However, we did play single tones, and fed the microphone back through the speaker.
-                            Despire all this, the dial worked perfectlY! You could call people in the unity game by dialing the numbers!
-                            Emily also made a really cool old-style GUI that displayed the story beats and text from the calls.
+                            However, we were able to play single tones, and feed the microphone back through the speaker.
+                            The dial also worked perfectly; You could call people in the unity game by dialing the numbers!
+                            Emily also made a really cool GUI that displayed the story beats and text from the calls.
                             You can find a video of it working <a href="https://youtu.be/dTvUh-z0RFk">here!</a>. 
                         </p>
                         <p>
@@ -144,10 +143,10 @@
                             Daudi had some old <a href="https://anki-overdrive.fandom.com/wiki/Main_Page">Anki Overdrive cars</a> 
                             and we wanted to make a "Fully Autonomous F1 Stream". Luckily for us, we were able to get the cars more or less working in the first
                             4 hours, and we could focus on all the really cool stuff around the cars for the other 20.
-                            This included a foam tunnel and banked corners,
-                            starting lights with a F1-style start sequence, a waving flag on the last lap, multi-camera broadcast that would change views depending on where
-                            the cars were, a track-position overlay, and to finish it all off, a locally running LLM that took the events on-track and commented on it
-                            like Crofty. This hack was so fun, and it was a shame that the judges didn't really look our way. 
+                            This included a foam tunnel, banked corners, starting lights with a F1-style start sequence, a waving flag on the last lap, 
+                            a multi-camera broadcast that would change views depending on where the cars were, a track-position overlay, 
+                            and to finish it all off, a local LLM that commented on the track order and drivers.
+                            This hack was so fun, and it was a shame that the judges didn't really look our way. 
                             Either way, this one is best explained in videos, so please have a watch <a href="https://www.youtube.com/channel/UCvuNe6Ls6tw27hfjwK3k6SQ">Here!</a>               
                         </p>
                     </div>
@@ -161,11 +160,11 @@
                             <div class="hexagon" title="Best Demonstration"></div>
                         </div>
                         <p> Apparently it takes crossing the entire country for someone who loves
-                            robots to actually make one at a hackathon. This project was insane.
+                            robots to actually make one at a hackathon.
                             I built and coded up this differencial drive robot from scratch using
                             another teams rasperry pi, some parts, and lots of cardboard. 
-                            My teamates created a backend and frontend that allowed a user to pilot the
-                            robot through a computer, and click on objects, that would then be identified using
+                            My teamates created a backend and frontend that allowed a user to remotely pilot the
+                            robot through a computer, and click on objects that would then be identified using
                             a vision model. We then took that thing, and scraped it's wikipedia file to give the 
                             user some information about it. We did 
                             <a href="https://www.databricks.com/glossary/retrieval-augmented-generation-rag">RAG</a> 
@@ -183,12 +182,12 @@
                             <div class="hexagon" title="Best Hardware Hack"></div>
                         </div>
                         <p> We returned to Sussex, and worked on exactly the same table.
-                            This time we wanted to create an IP between two computers using just 
+                            This time we wanted to create an IP between two computers using 
                             <a href="https://en.wikipedia.org/wiki/Flag_semaphore">the contemporary semaphore flag system</a>.
                             Each computer had a pair of flags, which moved using motors, and a camera. I used computer 
                             vision to read the flags. Then, some magic rust code made by my teammates created an 
                             actual network interface between the computers, at a speed of 0.02MB/s! We were able to run a 
-                            ping command <i>(mind, not in full, this would have taken over 2h!)</i>. We were able to perform the easiest 
+                            ping command <i>(mind, not in full, this would have taken over 2h!)</i> and demonstrate the easiest 
                             <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle attack</a> in the world,
                             by <i>literally standing between the computers</i> with our own flags!
                             
@@ -206,7 +205,7 @@
                         <p> Our first hack after LLM's became common-use in Hackathons. We carried
                             a house plant to Lancaster, and stuffed it with all kinds of sensors!
                             I built a <a href="https://en.wikipedia.org/wiki/Fuzzy_logic">fuzzy logic system </a><i>(I had just finished that module at UoN!)</i> to
-                            take sensor readings, and produce a "happyness" rating of the plant for lighting, moisture, etc.
+                            take sensor readings, and produce a "happiness" rating of the plant for lighting, moisture, etc.
                             these ratings were then fed into a locally running <a href="https://www.llama.com">Llama LLM</a>
                             to give our plant a voice! I also built it some eyes that would change depending on how the
                             plant was feeling. It ended up being very sassy and rude, which the judges found very funny!
@@ -224,9 +223,9 @@
                             We took a <a href="https://www.radiomuseum.org/r/sony_cassette_corder_tcm_737.html">Sony TCM-737 Cassete-Corder</a> from
                             1980, and used the recording and playing to simulate a functioning <i>(fixed-tape) </i> 
                             <a href="https://en.wikipedia.org/wiki/Turing_machine"> Turing Machine</a>! 
-                            This gave us a head that could travel along a tape, reading or writing the values of
-                            the tape. We had to listen to <a href="https://open.spotify.com/track/6LBjeNGjY0j0E3PQt0zwdg?si=9c66d7b5b0844351">
-                            Band on the Run</a> over 50 times when we were debugging!
+                            This gave us a head that could travel along a tape, reading or writing the values on
+                            the tape. Said tape originally had <a href="https://open.spotify.com/track/6LBjeNGjY0j0E3PQt0zwdg?si=9c66d7b5b0844351">
+                            Band on the Run</a> on it, which we ended up listening to over 50 times whilst we were debugging!
                         </p>
                     </div>
                     <img src="images/aa.jpg" title="We absolutely covered the table with our kit">
